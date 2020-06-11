@@ -1,0 +1,132 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+h1 {
+  /* color:indianred; */
+  /* color:#6B7A8F; */
+  color: #353535;
+  /* background-color: #ff6b6b; */
+  letter-spacing: 2px;
+  font-family: Verdana;
+  font-size: 60px;
+  text-align: center;
+}
+h2{
+  font-size: 30px;
+  text-align: center;
+  color: #353535;
+  font-weight: bold;
+  
+}
+h4 {
+  font-size: 20px;
+  text-align: center;
+  color: #353535;
+}
+h3 {
+  font-size: 25px;
+  text-align: center;
+  color: #353535;
+}
+
+p {
+  padding-right: 17%;
+  padding-left: 17%;
+  text-align: justify;
+  font-size: 130%;
+  font-family: Verdana;
+  /* background-color:azure; */
+  /* border: 1px solid black; */
+}
+body {
+  /* The image used */
+  /* background-image: url('/home/sara/Desktop/paint2.jpg'); */
+  background-image: linear-gradient(
+    to right top,
+    #6bd1c4,
+    #51cbd2,
+    #41c4df,
+    #46bbe8,
+    #5eb0ec,
+    #68aeed,
+    #71abee,
+    #7ba9ee,
+    #73b0f3,
+    #6cb7f6,
+    #65bef9,
+    #5fc5fb
+  );
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  font-family: Verdana;
+  background-color: lightcyan;
+  color: #444;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 30px;
+}
+  /* font-weight: bold; */
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: lightskyblue;
+  /* font-weight: bolder; */
+
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: lightcyan;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  /* height:auto; */
+  width:46%;
+}
+.SysDiag{
+  width:37%;
+}
+.pcb{
+  width:35%;
+}
+.salinity{
+  width:20%;
+}
+.IRSch{
+  width: 25%;
+}
+.sch{
+  width:65%;
+}
+.turb{
+  width:40%;
+}
+ol {
+  text-align: center;
+  list-style-position: inside;
+  font-size: 130%;
+  border: 5px azure;
+}
