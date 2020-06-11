@@ -150,7 +150,7 @@
 
       <p>Compared to the single-use sensors previously mentioned, this buoy/pod pair is about 1/100th of the cost, if you consider the salinity machine. The main draw, however, is the fact that the pair save a person multiple data collection trips a day. </p>
       </p>
-      <img src="/home/sara/Downloads/NewDiagram1.jpg" class="SysDiag"/>
+      <img src="images/NewDiagram1.jpg" class="SysDiag"/>
       <p style="text-align:center"><i>Figure 2: System-level block diagram</i></p>
       
       <h2>Technical Details</h2>
@@ -159,21 +159,21 @@
       <h3>Salinity Sensor</h3>
       <p>We are using a <a href="https://www.amazon.com/WINGONEER-Sensor-Droplet-Detection-Arduino/dp/B06XHDZ3Q4/ref=sr_1_5?dchild=1&keywords=arduino+water+level+sensor&qid=1591814497&sr=8-5" target="_blank">water level sensor</a> that, if fully submerged, can be used to measure the salinity of the water, as conductivity changes with salinity.</p>
       <p>The salinity of the Pacific Ocean can vary from 34 ppt to 37 ppt, but the average salinity of the Puget Sound is 29 ppt. To allow for the buoys to be used in multiple locations, we mapped ADC readings from water samples with salinities ranging from 27 to 37 ppt. We worked backwards to find a range of ADC measurements that correspond to a specific salinity measurement. We started our mapping process with 1 mL of water combined with 27 grams of salt, and recorded 5 ADC readings, then continued this process by incrementing the amount of salt by 1 gram until we reached 37 grams. As expected, there was a distinct range in ADC readings for each salinity concentration. (Ideally, we would've instead borrowed a refractometer from the marine biology department at Western to compare its output with our ADC readings, but the pandemic forced us to get creative).</p>
-      <img src="/home/sara/salinity1.jpg" class="salinity" />
+      <img src="images/salinity1.jpg" class="salinity" />
 
       <h3>Turbidity Sensor</h3>
       <p>Originally we were going to use a turbidity sensor that is used in washing machines and dishwashers, however we decided to design our own using an IR LED and a photodiode. As you can see from Figure 4 below, when there is nothing between the LED and photodiode, the indicating blue LED for protyping is off (and the ADC will read 0V).</p>
-      <img src="/home/sara/IRSchematic.png" class="IRSch" />
+      <img src="images/IRSchematic.png" class="IRSch" />
       <p style="text-align:center"><i>Figure 3: Turbidity sensor schematic</i></p>
 
-      <img src="/home/sara/Downloads/LEDCollage.jpg" class="turb" />
+      <img src="images/LEDCollage.jpg" class="turb" />
       <p style="text-align:center"><i>Figure 4: Prototype of turbidity sensor</i></p>
       <h3>Board Images</h3>
-      <img src="/home/sara/mainSch.png" class="sch" />
+      <img src="images/mainSch.png" class="sch" />
       <p style="text-align:center"><i>Figure 5: Schematic</i></p>
-      <img src="/home/sara/pcb.png" class="pcb" />
+      <img src="images/pcb.png" class="pcb" />
       <p style="text-align:center"><i>Figure 5: PCB Layout</i></p>
-      <img src="/home/sara/MainBoardPCB.PNG" class="pcb" />
+      <img src="images/MainBoardPCB.PNG" class="pcb" />
       <p style="text-align:center"><i>Figure 6: 3D Render </i></p>
     <!-- </div> -->
     <!-- <button type="button" class="collapsible">Technical Details</button> -->
