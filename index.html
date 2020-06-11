@@ -1,1 +1,202 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sara Morimoto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Sara Morimoto</h1>
+
+    <button type="button" class="collapsible">About</button>
+    <div class="content">
+        <p><i>Sara Morimoto is attending Western Washington University on a Scott's Tots full ride, and will be graduating this fall with a BS in electrical engineering. She would like to thank her fellow EEs for the best four years a person could ask for, namely Daniel for all the <b>car</b> rides down to Seattle, and Bryce for the online dating profile tips. She hopes to inspire other young women to persue engineering, so long as therapy is covered by their healthcare provider. She plans to move back to the northwest after this whole "virus" thing blows over, so she can go back to buying coffee she can't afford.</i></p>    </div>
+        <button type="button" class="collapsible">Corona Disclaimer</button>
+        <div class="content">
+            <p><i>If the coronavirus hadn’t locked me and my fellow classmates out of the labs, I like to think that my project would’ve been a major success. I probably would’ve been the first EE to come out of Western with a patent and contract with NASA.</i></p>
+             <p><i> 
+              The following is a breakdown of my no longer patent-worthy senior capstone. (The system requirements have been altered a lot due to the current circumstances). As you peruse this page, pretend things are normal and we didn’t just spend the last 3 months baking bread and shaving our heads. 
+                </i></p></div>
+    
+
+    <h3>Capstone: Water Weather Station</h3>
+    <h4><i>(Buoy-ya!)</i></h4>
+    <!-- <button type="button" class="collapsible">Background</button> -->
+    <!-- <div class="content"> -->
+      <h2>Background</h2>
+      <p>
+        Computer Science professors at Western Washington University along with
+        directors at the Sea Discovery Center in Poulsbo, WA have created a
+        Cyber Security Summer Camp for middle school teachers and students at
+        the WWU Poulsbo Campus.
+      </p>
+      <p>
+        At the camp, the students and teachers are taught two main lessons on
+        cyber security. The first lesson compares the way we protect ourselves
+        in cyber with how sea creatures protect themselves (layers, hardened
+        outer shells, disguises, etc.).
+      </p>
+      <p>
+        The second lesson is a tad more involved. The camp directors wanted a
+        project that would demonstrate cyber security in action while doing some
+        useful marine science. The project they came up with is the
+        <b>Water Weather Station</b>. This project implements multiple sensors
+        on a buoy that collect environmental data. A mobile app created by WWU
+        CS students retrieves the data, and sends the data to a web server which
+        stores and displays the collected data on a website for the Sea
+        Discovery Center.
+      </p>
+      <p>
+        The project lets teachers and students do hands on science, and makes
+        useful examples of cyber security in action using passwords, encryption,
+        separation of authorizations, etc. Because the students have already
+        looked at these areas of security in the camp, seeing them in actual use
+        gives them that “ah-ha” moment as they understand the context.
+      </p>
+    <!-- </div> -->
+    <!-- <button type="button" class="collapsible">Existing Solutions</button> -->
+    <!-- <div class="content"> -->
+      <h2>Existing Solutions</h2>
+      <p>
+        As part of the camp, the Sea Discovery Center explains the importance of
+        taking measurements, particularly the blending of fresh and salt water
+        in estuaries and how that affects marine life. This includes important
+        factors such as salinity, temperature, turbidity and isolation. (Turbidity is a measurement of how cloudy or hazy a fluid is). At the camp,
+        students get hands-on practice using a variety of instruments, from
+        simple tools like secchi disks and standard thermometers, to complex
+        tools like a $10,000 salinity machine. All of the tools are single use,
+        where someone takes measurements and records them 2-3 times per day.
+        This gives the students an appreciation for the capabilities of the
+        buoy.
+      </p>
+        <img src="/home/sara/Downloads/DiagramSP.png" />
+      <p style="text-align:center"><i>Figure 1: New two buoy system</i></p>
+      <p>
+        They were having issues with waterproofing the fully submerged sensor
+        array, as the sensors they were using were thru-hole components on a
+        breadboard dipped in epoxy. The purpose of my project was to implement
+        the <b> new sensor pod</b>, and design PCBs for each sensor, making them
+        much smaller and easier to waterproof.
+      </p>
+    <!-- </div> -->
+    <!-- <button type="button" class="collapsible">User Needs</button> -->
+    <!-- <div class="content"> -->
+      <h2>User Needs</h2>
+      <p>
+        The new sensor pod would be controlled by a separate MCU (the brains of
+        the pods) that would collect data measurements upon the main buoy’s
+        request, and send the recorded data back to the main buoy.
+      </p>
+      <h3>System Requirements</h3>
+      <p>
+          <ol>
+              <li>
+                  The sensor array pod must communicate with the main buoy microcontroller (ESP32)
+                  </li>
+              <li>
+                  The pod shall measure the turbidity, salinity and temperature of the water
+                  </li>
+              <li>
+                  The pod shall measure the turbidity, salinity and temperature of the water and report the data upon the main buoy's request
+                  </li>
+              <li>
+                      The pod shall average and report measured data upon the main buoy's request
+                  </li>
+              <li>
+                    The pod shall send the measured data and receive requests through UART
+                  </li>
+              <li>
+                  The pod must fit in a 12 oz water bottle (8x4x1.5 inches) and stay tethered to the main buoy
+                  </li>  
+              <li>
+                  The pod shall sink 2 meters below the surface of the water                     
+                </li>             
+              <li>
+                  The pod shall be able to stay tethered to the main buoy in the event of swells
+              </li>    
+              <li>
+                  The pod shall be water resistant in accordance with the IP68 standard
+              </li>
+              <li>
+                  The pod's dimensions shall be smaller than 8x4x1.5 inches
+              </li>
+              <li>
+                  The pod's mcu shall enter low power mode when sensors are not in use
+              </li>
+              <li>
+                  The pod's mcu shall enter low power mode (less than 3% of power consumed during normal operation)
+              </li>
+              <li>
+                  The pod shall have a voltage regulator for each sensor's input voltage (3.3 V)
+              </li>
+              <li>
+                  The pod shall be able to supply a maximum current of 30mA to the sensors
+              </li>
+              <li>
+                  The pod's maximum delay from delivery of data shall be less than 30ms
+              </li>
+              <li>
+                  The pod shall be able to process and average data from sensors with .25% accuracy
+              </li>
+              <li>
+                  The total cost shall be under $150
+              </li>
+            </ol>
+      </p>
+      <h2>Hardware Design</h2>
+    <!-- </div> -->
+    <!-- <button type="button" class="collapsible">Design</button> -->
+    <!-- <div class="content"> -->
+      <p>The three sensors had already been chosen for me, which made the design process straightforward.</p>
+      <p>When my MCU (Kinetis K22) receives a request to start a data collection sequence from the Buoy, it exits Low Power Mode and uses GPIO pins to enable the LDOs and boost converter that power the 3 sensors. The three sensors’ outputs get sampled and averaged by an ADC Module on my MCU.</p>
+
+      <p>Compared to the single-use sensors previously mentioned, this buoy/pod pair is about 1/100th of the cost, if you consider the salinity machine. The main draw, however, is the fact that the pair save a person multiple data collection trips a day. </p>
+      </p>
+      <img src="/home/sara/Downloads/NewDiagram1.jpg" class="SysDiag"/>
+      <p style="text-align:center"><i>Figure 2: System-level block diagram</i></p>
+      
+      <h2>Technical Details</h2>
+      <h3>Temperature Sensor</h3>
+      <p>The temperature sensor is a <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf" target="_blank">TMP36</a>, which provides an output voltage that's linearly proportional to the Celsius temperature.</p>
+      <h3>Salinity Sensor</h3>
+      <p>We are using a <a href="https://www.amazon.com/WINGONEER-Sensor-Droplet-Detection-Arduino/dp/B06XHDZ3Q4/ref=sr_1_5?dchild=1&keywords=arduino+water+level+sensor&qid=1591814497&sr=8-5" target="_blank">water level sensor</a> that, if fully submerged, can be used to measure the salinity of the water, as conductivity changes with salinity.</p>
+      <p>The salinity of the Pacific Ocean can vary from 34 ppt to 37 ppt, but the average salinity of the Puget Sound is 29 ppt. To allow for the buoys to be used in multiple locations, we mapped ADC readings from water samples with salinities ranging from 27 to 37 ppt. We worked backwards to find a range of ADC measurements that correspond to a specific salinity measurement. We started our mapping process with 1 mL of water combined with 27 grams of salt, and recorded 5 ADC readings, then continued this process by incrementing the amount of salt by 1 gram until we reached 37 grams. As expected, there was a distinct range in ADC readings for each salinity concentration. (Ideally, we would've instead borrowed a refractometer from the marine biology department at Western to compare its output with our ADC readings, but the pandemic forced us to get creative).</p>
+      <img src="/home/sara/salinity1.jpg" class="salinity" />
+
+      <h3>Turbidity Sensor</h3>
+      <p>Originally we were going to use a turbidity sensor that is used in washing machines and dishwashers, however we decided to design our own using an IR LED and a photodiode. As you can see from Figure 4 below, when there is nothing between the LED and photodiode, the indicating blue LED for protyping is off (and the ADC will read 0V).</p>
+      <img src="/home/sara/IRSchematic.png" class="IRSch" />
+      <p style="text-align:center"><i>Figure 3: Turbidity sensor schematic</i></p>
+
+      <img src="/home/sara/Downloads/LEDCollage.jpg" class="turb" />
+      <p style="text-align:center"><i>Figure 4: Prototype of turbidity sensor</i></p>
+      <h3>Board Images</h3>
+      <img src="/home/sara/mainSch.png" class="sch" />
+      <p style="text-align:center"><i>Figure 5: Schematic</i></p>
+      <img src="/home/sara/pcb.png" class="pcb" />
+      <p style="text-align:center"><i>Figure 5: PCB Layout</i></p>
+      <img src="/home/sara/MainBoardPCB.PNG" class="pcb" />
+      <p style="text-align:center"><i>Figure 6: 3D Render </i></p>
+    <!-- </div> -->
+    <!-- <button type="button" class="collapsible">Technical Details</button> -->
+    <!-- <div class="content"> -->
+    <!-- </div> -->
+
+    <script>
+      var coll = document.getElementsByClassName('collapsible');
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener('click', function() {
+          this.classList.toggle('active');
+          var content = this.nextElementSibling;
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'block';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
