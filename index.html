@@ -65,7 +65,6 @@
         This gives the students an appreciation for the capabilities of the
         buoy.
       </p>
-        <!-- <img src="/home/sara/Downloads/DiagramSP.png" /> -->
         <img src="images/DiagramSP.jpg" />
 
       <p style="text-align:center"><i>Figure 1: New two buoy system</i></p>
@@ -76,9 +75,7 @@
         the <b> new sensor pod</b>, and design PCBs for each sensor, making them
         much smaller and easier to waterproof, and implement the same sensor array two meters below the buoy. 
       </p>
-    <!-- </div> -->
-    <!-- <button type="button" class="collapsible">User Needs</button> -->
-    <!-- <div class="content"> -->
+
       <h2>User Needs</h2>
       <p>
         The new sensor pod would be controlled by a separate MCU (the brains of
@@ -142,9 +139,6 @@
             </ol>
       </p>
       <h2>Hardware Design</h2>
-    <!-- </div> -->
-    <!-- <button type="button" class="collapsible">Design</button> -->
-    <!-- <div class="content"> -->
       <p>The three sensors had already been chosen for me, which made the design process straightforward.</p>
       <p>When my MCU (Kinetis K22) receives a request to start a data collection sequence from the Buoy, it exits Low Power Mode and uses GPIO pins to enable the LDOs and boost converter that power the 3 sensors. The three sensors’ outputs get sampled and averaged by an ADC Module on my MCU.</p>
 
@@ -155,10 +149,11 @@
       
       <h2>Technical Details</h2>
       <h3>Temperature Sensor</h3>
-      <p>The temperature sensor is a <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf" target="_blank">TMP36</a>, which provides an output voltage that's linearly proportional to the Celsius temperature.</p>
+      <p>The temperature sensor is a <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf" target="_blank">TMP36</a>, which provides an output voltage that's linearly proportional to the temperature in degrees celsius.</p>
       <h3>Salinity Sensor</h3>
       <p>We are using a <a href="https://www.amazon.com/WINGONEER-Sensor-Droplet-Detection-Arduino/dp/B06XHDZ3Q4/ref=sr_1_5?dchild=1&keywords=arduino+water+level+sensor&qid=1591814497&sr=8-5" target="_blank">water level sensor</a> that, if fully submerged, can be used to measure the salinity of the water, as conductivity changes with salinity.</p>
-      <p>The salinity of the Pacific Ocean can vary from 34 ppt to 37 ppt, but the average salinity of the Puget Sound is 29 ppt. To allow for the buoys to be used in multiple locations, we mapped ADC readings from water samples with salinities ranging from 27 to 37 ppt. We worked backwards to find a range of ADC measurements that correspond to a specific salinity measurement. We started our mapping process with 1 mL of water combined with 27 grams of salt, and recorded 5 ADC readings, then continued this process by incrementing the amount of salt by 1 gram until we reached 37 grams. As expected, there was a distinct range in ADC readings for each salinity concentration. (Ideally, we would've instead borrowed a refractometer from the marine biology department at Western to compare its output with our ADC readings, but the pandemic forced us to get creative).</p>
+      <p>
+        The salinity of the Pacific Ocean can vary from 34 ppt to 37 ppt, but the average salinity of the Puget Sound is 29 ppt. To allow for the buoys to be used in multiple locations, we mapped ADC readings from water samples with salinities ranging from 27 to 37 ppt. We worked backwards to find a range of ADC measurements that correspond to a specific salinity measurement. We started our mapping process with 1 mL of water combined with 27 grams of salt, and recorded 5 ADC readings, then continued this process by incrementing the amount of salt by 1 gram until we reached 37 grams. As expected, there was a distinct range in ADC readings for each salinity concentration. (Ideally, we would've instead borrowed a refractometer from the marine biology department at Western to compare its output with our ADC readings, but the pandemic forced us to get creative).</p>
       <img src="images/salinity1.jpg" class="salinity" />
 
       <h3>Turbidity Sensor</h3>
@@ -177,10 +172,6 @@
       <p style="text-align:center"><i>Figure 6: 3D Render </i></p>
       <img src="images/BOM.png" class="bom" />
       <p style="text-align:center"><i>Figure 7: Bill of Materials </i></p>
-    <!-- </div> -->
-    <!-- <button type="button" class="collapsible">Technical Details</button> -->
-    <!-- <div class="content"> -->
-    <!-- </div> -->
 
     <script>
       var coll = document.getElementsByClassName('collapsible');
